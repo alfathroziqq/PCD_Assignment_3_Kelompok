@@ -31,14 +31,14 @@ def index():
             results.append(("Original", '/' + save_image("sobel_orig.png", original)))
             results.append(("Sobel X", '/' + save_image("sobel_x.png", sobel_x)))
             results.append(("Sobel Y", '/' + save_image("sobel_y.png", sobel_y)))
-            results.append(("Magnitude", '/' + save_image("sobel_mag.png", magnitude)))
+            results.append(("Gabungan", '/' + save_image("sobel_mag.png", magnitude)))
 
         elif method == "prewitt":
             original, prewitt_x, prewitt_y, combined = prewitt(img_path)
             results.append(("Original", '/' + save_image("prewitt_orig.png", original)))
             results.append(("Prewitt X", '/' + save_image("prewitt_x.png", prewitt_x)))
             results.append(("Prewitt Y", '/' + save_image("prewitt_y.png", prewitt_y)))
-            results.append(("Combined", '/' + save_image("prewitt_combined.png", combined)))
+            results.append(("Gabungan", '/' + save_image("prewitt_combined.png", combined)))
         
         elif method == "roberts":
             original, result = roberts_edge_detection(img_path)
