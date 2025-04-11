@@ -40,7 +40,7 @@ def index():
             results.append(("Prewitt Y", '/' + save_image("prewitt_y.png", prewitt_y)))
             results.append(("Gabungan", '/' + save_image("prewitt_combined.png", combined)))
         
-        elif method == "roberts":
+        elif method == "robert":
             original, result = roberts_edge_detection(img_path)
             results.append(("Original", '/' + save_image("robert_orig.png", original)))
             results.append(("Roberts Edge", '/' + save_image("robert_edge.png", result)))
