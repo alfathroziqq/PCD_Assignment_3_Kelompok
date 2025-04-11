@@ -13,6 +13,8 @@ def LoGFilter(img_path, sigma=2.0):
     kernel /= np.sum(np.abs(kernel))
 
     result = cv2.filter2D(img, -1, kernel)
+    result = cv2.normalize(result, None, 0, 255, cv2.NORM_MINMAX)
     result = cv2.convertScaleAbs(result)
+
 
     return img, result
