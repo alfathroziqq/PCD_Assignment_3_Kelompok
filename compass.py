@@ -24,7 +24,10 @@ def compass_operator(image, direction='all'):
         for kernel in compass_filters.values():
             response = ndimage.convolve(img_gray, kernel)
             responses.append(response)
-        gradient = np.max(np.array(responses), axis=0)
+        gradient = np.sqrt(np.sum(np.square(np.array(responses)), axis=0))
+
+        threshold = 20
+        gradient[gradient < threshold] = 0
 
     gradient = (gradient / gradient.max() * 255).astype(np.uint8)
     return Image.fromarray(gradient)
